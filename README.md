@@ -1,2 +1,2 @@
-# do_sql
-Ejecuta instrucciones DDL sql desde JavaScript
+# js-do_sql
+Ejecuta instrucciones DML de SQL desde JavaScript
