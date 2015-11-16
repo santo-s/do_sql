@@ -1,2 +1,17 @@
-# js-do_sql
-Ejecuta instrucciones DML de SQL desde JavaScript
+# do_sql.js
+Ejecuta instrucciones DML (Data Manipulation Language)
+ de SQL desde JavaScript.
+
+Este proyecto forma parte un proyecto mayor que consiste en permitir la creación de bloques de código tipo PLSQL de Oracle usando JavaScript.
+La estructura básica de trabajo es:
+
+try { // BEGIN
+	... codigo javascript
+	... codigo SQL
+	... codigo javascript
+} catch { // EXCEPTION
+	.. manejo de errores
+} // END
+
+El código SQL y la base de datos donde se ejecuta dicho código, no es dependiente de Oracle. Es decir puede ser cualquier base de datos. 
+Pero, para efectos de este proyecto el código esta siendo probado, simultáneamente, con la base de datos Oracle y con MySql.

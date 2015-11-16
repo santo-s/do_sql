@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="language" content="en">
+    <title>DO_SQL Example</title>
+
+    <!-- JQUERY -->
+    <script src="../js/jquery-latest.js" type="text/javascript"></script>
+    <script src="../js/jquery-ui-latest.js" type="text/javascript"></script>
+    <!--  -->
+
+    <!-- Requerido para la declaracion de clases -->
+    <script src="../js/class.js" type="text/javascript"></script>
+    <!--  -->
+
+    <!-- Requerido para encriptar el password -->
+    <script src="../js/cryptojs-aes/aes.js" type="text/javascript"></script>
+    <script src="../js/cryptojs-aes/aes-json-format.js" type="text/javascript"></script>
+    <!--  -->
+
+    <!-- JQueryUI for CONNECT Dialog-->
+    <link rel="stylesheet" href="../Styles/SevenSL/jquery-ui.css">
+    <!--script src="../js/jquery/ui/jquery-ui.js"></script-->
+
+    <!-- DO_SQL -->
+    <script src="../js/do_sql.js" type="text/javascript"></script>
+    <!--  -->
+
+<script>
+$(function() {
+
+	// USE default Database 
+    var DO_SQL = new DO_SQL_CLASS();
+
+    try { // BEGIN
+        //DO_SQL.SQL_DIALOG_CONNECT(sql_operation);
+		sql_operation();
+    } catch (e) { // EXCEPTION
+        alert("Error capture "+e);
+    } // END
+
+
+	function sql_operation() {
+		try {
+			var var1 = 55;
+			var var2 = 73699;
+
+			DO_SQL.BIND({var1: var1, var2: var2});
+			try {
+				var result = DO_SQL.SQL("" +
+						" select ename \n" +
+						" into :var1 \n" +
+						" from emp \n" +
+						" where empno = :var2; "
+				);
+			} catch (e) {
+				if (e.SQL.EXCEPTION(e.SQL.NO_DATA_FOUND)) {
+					alert("Employee Not Found");
+				} else throw e;
+			}
+			if (result) {
+				var1 = result.var1;
+				var2 = result.var2;
+			}
+			console.log("var1 = " + var1);
+			console.log("var2 = " + var2);
+
+			var2 = 515;
+			DO_SQL.BIND({date: null, var2: 7934});
+			var x = DO_SQL.SQL_ADVANCED("" +
+					" declare a integer;" +
+					" set a = 2000; " +
+					" select hiredate " +
+					" into :date " +
+					" from emp " +
+					" where empno = :var2; " +				
+					" set :var2 = a; " 			
+			);
+			if (x) {
+				var2 = x.var2;
+			}
+			console.log("Hire Date = " + x.date);
+			console.log("var2 = " + var2);
+		}
+		catch(e) {
+			alert("Error EN sql_operation Error capture "+e);
+			console.log(e.SQL.SQLCODE);
+			//throw e;
+		}
+		//USO DEL CURSOR /////////////////////////
+		TEST = new CursorPLSQL('', "select * from emp order by empno");
+		//TEST.FETCH_RECORD();
+		TEST.OPEN();
+		while (TEST.FETCH_RECORD()) {
+			console.log(TEST.last_record + " = "+TEST.empno+" "+TEST.ename+" "+TEST.hiredate);
+		}
+		TEST.CLOSE();
+		// /////////////////////////////////
+	}
+
+
+
+});
+
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>
