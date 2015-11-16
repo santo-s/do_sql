@@ -81,7 +81,7 @@ The only configuration required is to create files " datasource " located in the
 
 datasourcename.sources.json
 
-Where he " DataSourceName " is the name as the class DO_SQL recognizes  the database .
+Where "datasourcename " is the name as the class DO_SQL recognizes  the database .
 
 Below there is an example for Oracle database and MySql database .
 
