@@ -2,9 +2,9 @@
 Ejecuta instrucciones DML (Data Manipulation Language)
  de SQL desde JavaScript.
 
-Este proyecto forma parte un proyecto mayor que consiste en permitir la creaci髇 de bloques de c骴igo tipo PLSQL de Oracle usando JavaScript.
-La estructura b醩ica de trabajo es:
-
+Este proyecto forma parte un proyecto mayor que consiste en permitir la creaci贸n de bloques de c贸digo tipo PLSQL de Oracle usando JavaScript.
+La estructura b谩sica de trabajo es:
+<pre>
 try { // BEGIN
 	... codigo javascript
 	... codigo SQL
@@ -12,6 +12,6 @@ try { // BEGIN
 } catch { // EXCEPTION
 	.. manejo de errores
 } // END
-
-El c骴igo SQL y la base de datos donde se ejecuta dicho c骴igo, no es dependiente de Oracle. Es decir puede ser cualquier base de datos. 
-Pero, para efectos de este proyecto el c骴igo esta siendo probado, simult醤eamente, con la base de datos Oracle y con MySql.
+</pre>
+El c贸digo SQL y la base de datos donde se ejecuta dicho c贸digo, no es dependiente de Oracle. Es decir puede ser cualquier base de datos. 
+Pero, para efectos de este proyecto el c贸digo esta siendo probado, simult谩neamente, con la base de datos Oracle y con MySql.
