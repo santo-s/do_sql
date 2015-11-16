@@ -15,8 +15,8 @@ try { // BEGIN
 </pre>
 El código SQL y la base de datos donde se ejecuta dicho código, no es dependiente de Oracle. Es decir puede ser cualquier base de datos. 
 Pero, para efectos de este proyecto el código esta siendo probado, simultáneamente, con la base de datos Oracle y con MySql.
-<table><tr><td>
-<h3>Instalacion</h3>
+<table><tr><td style="width:200px">
+<h3>Instalación</h3>
 </td><td><h3>Installation</h3></td></tr>
 <tr>
 <td>Para hacer uso de do_sql.js se requiere Apache y php 5.4 o superior del lado del servidor.
