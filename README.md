@@ -15,7 +15,7 @@ try { // BEGIN
 </pre>
 El código SQL y la base de datos donde se ejecuta dicho código, no es dependiente de Oracle. Es decir puede ser cualquier base de datos. 
 Pero, para efectos de este proyecto el código esta siendo probado, simultáneamente, con la base de datos Oracle y con MySql.
-<table><tr><td style="width:200px">
+<table><tr><td width="200px" style="width:200px">
 <h3>Instalación</h3>
 </td><td><h3>Installation</h3></td></tr>
 <tr>
@@ -75,13 +75,11 @@ En el directorio textdb hay un datasource llamado "default", (default.sources.js
 </td>
 <td>To use do_sql.js Apache and PHP 5.4 or higher required  on server side.
 
-
 Copy the files on your WEB server.
 
 The only configuration required is to create files " datasource " located in the " textdb " directory. A data source contains the information needed to connect to the database. Each data source has a name which is specified in the DO_SQL_CLASS class to indicate where and how to connect. The files are named with the following connotation :
 
 datasourcename.sources.json
-
 
 Where he " DataSourceName " is the name as the class DO_SQL recognizes  the database .
 
