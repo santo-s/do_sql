@@ -15,3 +15,6 @@ try { // BEGIN
 </pre>
 El código SQL y la base de datos donde se ejecuta dicho código, no es dependiente de Oracle. Es decir puede ser cualquier base de datos. 
 Pero, para efectos de este proyecto el código esta siendo probado, simultáneamente, con la base de datos Oracle y con MySql.
+<table><tr><td>
+<h1>Instalacion</h1>
+</td><td>Installation</td></tr></table>
